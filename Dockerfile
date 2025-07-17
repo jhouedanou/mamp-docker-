@@ -12,6 +12,7 @@ RUN apt-get update && apt-get install -y \
     unzip \
     git \
     nano \
+    mysql-client \
     && rm -rf /var/lib/apt/lists/*
 
 # Ajout du repository PHP officiel
@@ -29,7 +30,6 @@ RUN apt-get update && apt-get install -y \
     php8.3-curl \
     php8.3-xml \
     php8.3-bcmath \
-    php8.3-json \
     php8.3-opcache \
     php8.3-intl \
     php8.3-soap \
@@ -69,4 +69,4 @@ EXPOSE 80 443
 
 # Point d'entrée
 ENTRYPOINT ["docker-entrypoint.sh"]
-CMD ["apache2-foreground"] 
+CMD ["apache2ctl", "-D", "FOREGROUND"] 

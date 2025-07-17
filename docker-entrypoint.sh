@@ -17,7 +17,7 @@ download_wordpress() {
         cd /var/www/html
         
         # Télécharger la dernière version de WordPress
-        curl -O https://wordpress.org/latest.tar.gz
+        curl -k -O https://wordpress.org/latest.tar.gz
         tar -xzf latest.tar.gz --strip-components=1
         rm latest.tar.gz
         
@@ -47,7 +47,7 @@ create_wp_config() {
         sed -i "s/localhost/$WORDPRESS_DB_HOST/g" wp-config.php
         
         # Générer les clés de sécurité WordPress
-        SALT=$(curl -L https://api.wordpress.org/secret-key/1.1/salt/)
+        SALT=$(curl -k -L https://api.wordpress.org/secret-key/1.1/salt/)
         sed -i "/#@-/,/#@+/c\\$SALT" wp-config.php
         
         # Définir les permissions
