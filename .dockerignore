@@ -1,0 +1,32 @@
+# Fichiers système
+.DS_Store
+Thumbs.db
+
+# Fichiers de développement
+.git
+.gitignore
+README.md
+.env
+
+# Fichiers Docker
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# Fichiers de logs
+*.log
+
+# Fichiers temporaires
+*.tmp
+*.temp
+
+# Fichiers de cache
+.cache/
+node_modules/
+
+# Fichiers de sauvegarde
+*.bak
+*.backup
+
+# Fichiers de configuration locaux
+wp-config-local.php 
